@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Level>
+  <Object type ="ObjectName">
+    <Body x="0.0f" y="0.0f" angle="0.0f"/>
+  </Object>
+  <Object type ="Object2Name">
+    <Body x="1.0f" y="1.0f" angle="90.0f" />
+  </Object>
+</Level>
