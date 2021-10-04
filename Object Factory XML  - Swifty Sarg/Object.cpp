@@ -15,7 +15,7 @@ Object::Object() {
 
 Object::~Object() {
 	renderer = nullptr;
-	texture->free();
+	texture = nullptr;
 	inPlay = false;
 
 	x = 0.0f;

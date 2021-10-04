@@ -81,7 +81,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)Game\</OutDir>
     <IntDir>$(ProjectDir)Temp\</IntDir>
-    <IncludePath>$(ProjectDir)Third Party\SDL2;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Third Party\SDL2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)Third Party\SDL2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -166,6 +166,7 @@ xcopy"$(ProjectDir)Assets" "$(ProjectDir)Game\Assets" /E /I /F /Y</Command>
     <ClInclude Include="Library.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectFactory.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
