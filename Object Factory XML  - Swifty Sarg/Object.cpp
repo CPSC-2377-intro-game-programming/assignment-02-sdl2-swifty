@@ -1,10 +1,25 @@
 #include "Object.h"
 
 Object::Object() {
+	x = 0.0f;
+	y = 0.0f;
+
+	angle = 0.0f;
+	rotationAngle = 0.0f;
+
 	inPlay = false;
+	renderer = nullptr;
+	texture = nullptr;
 }
+
 
 Object::~Object() {
-	//not using object but xml so just empty?
-}
+	renderer = nullptr;
+	texture->free();
+	inPlay = false;
 
+	x = 0.0f;
+	y = 0.0f;
+	angle = 0.0f;
+	rotationAngle = 0.0f;
+}
