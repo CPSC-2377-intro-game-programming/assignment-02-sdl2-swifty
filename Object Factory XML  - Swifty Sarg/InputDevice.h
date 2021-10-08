@@ -17,7 +17,7 @@ public:
 		float y = 0;
 	};
 
-	View::Vector2d getInputPosition(iPosition::x xVal, iPosition::y yVal);
+	View::Vector2d getInputPosition(View::Vector2d XY);
 	
 	enum class gameEvent {
 		NA,

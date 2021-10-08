@@ -1,9 +1,17 @@
 #include "InputDevice.h"
 #include "View.h"
 
-View::Vector2d getInputPosition(InputDevice::iPosition::x xVal,
-	InputDevice::iPosition::y yVal) {
-	return iPosition;
+View::Vector2d InputDevice::getInputPosition(View::Vector2d XY)
+{
+	iPosition iposit;
+	XY.x = iposit.x;
+	XY.y = iposit.y;
+	return XY;
+
+	/*View::Vector2d values;
+	values.x = iPosit.x;
+	values.y = iPosit.y;
+	return values;*/
 }
 
 bool InputDevice::GetEvent(gameEvent eventG) {

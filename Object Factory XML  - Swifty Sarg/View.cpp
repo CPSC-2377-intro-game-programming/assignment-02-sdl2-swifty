@@ -8,7 +8,7 @@ View::View() {
 
 bool View::viewUpdate(Vector2d position, InputDevice* inputDevice)
 {
-	position = inputDevice->getInputPosition();
+	position = inputDevice->getInputPosition(position);
 	return true;
 }
 
