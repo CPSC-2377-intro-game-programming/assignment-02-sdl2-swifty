@@ -21,8 +21,7 @@ public:
 	bool viewUpdate(Vector2d position, InputDevice* inputDevice);
 	
 private:
-
-	float positCenter;
+	Vector2d positCenter;
 };
 
 
