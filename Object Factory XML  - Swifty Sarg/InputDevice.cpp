@@ -1,58 +1,69 @@
 #include "InputDevice.h"
+#include "View.h"
+
+View::Vector2d getInputPosition(InputDevice::iPosition::x xVal,
+	InputDevice::iPosition::y yVal) {
+	return iPosition;
+}
 
 bool InputDevice::GetEvent(gameEvent eventG) {
-	gameEvent GE;
-	if (SDL_PollEvent(event.get())) {
-		switch (event->type) {
-		case SDL_KEYDOWN:
-			GE = Translate();
-			if (keyStates.find(GE)->first == eventG) {
-				keyStates.find(GE)->second = true;
-			}
-			break;
-		case SDL_KEYUP:
-			GE = Translate();
-			if (keyStates.find(GE)->first == eventG) {
-				keyStates.find(GE)->second = true;
-			}
-			break;
-		case SDL_MOUSEBUTTONDOWN:
-			switch (event->button.button) {
-			case SDL_BUTTON_LEFT:
-				if (keyStates.find(GE)->first == eventG) {
-					keyStates.find(GE)->second = true;
-				}
-				break;
-			case SDL_BUTTON_RIGHT:
-				if (keyStates.find(GE)->first == eventG) {
-					keyStates.find(GE)->second = true;
-				}
-				break;
-			}
-		case SDL_MOUSEBUTTONUP:
-			switch (event->button.button) {
-			case SDL_BUTTON_LEFT:
-				if (keyStates.find(GE)->first == eventG) {
-					keyStates.find(GE)->second = true;
-				}
-				break;
-			case SDL_BUTTON_RIGHT:
-				if (keyStates.find(GE)->first == eventG) {
-					keyStates.find(GE)->second = true;
-				}
-				break;
-			}
-			break;
-		case SDL_QUIT:
-			if (keyStates.find(GE)->first == eventG) {
-				keyStates.find(GE)->second = true;
-			}
-			break;
-		default:
-			break;
-		}
-	}
+	return (keyStates.find(eventG)->second);
 }
+
+//bool InputDevice::GetEvent(gameEvent eventG) {
+//	gameEvent GE;
+//	if (SDL_PollEvent(event.get())) {
+//		switch (event->type) {
+//		case SDL_KEYDOWN:
+//			GE = Translate();
+//			if (keyStates.find(GE)->first == eventG) {
+//				keyStates.find(GE)->second = true;
+//			}
+//			break;
+//		case SDL_KEYUP:
+//			GE = Translate();
+//			if (keyStates.find(GE)->first == eventG) {
+//				keyStates.find(GE)->second = true;
+//			}
+//			break;
+//		case SDL_MOUSEBUTTONDOWN:
+//			switch (event->button.button) {
+//			case SDL_BUTTON_LEFT:
+//				if (keyStates.find(GE)->first == eventG) {
+//					keyStates.find(GE)->second = true;
+//				}
+//				break;
+//			case SDL_BUTTON_RIGHT:
+//				if (keyStates.find(GE)->first == eventG) {
+//					keyStates.find(GE)->second = true;
+//				}
+//				break;
+//			}
+//		case SDL_MOUSEBUTTONUP:
+//			switch (event->button.button) {
+//			case SDL_BUTTON_LEFT:
+//				if (keyStates.find(GE)->first == eventG) {
+//					keyStates.find(GE)->second = true;
+//				}
+//				break;
+//			case SDL_BUTTON_RIGHT:
+//				if (keyStates.find(GE)->first == eventG) {
+//					keyStates.find(GE)->second = true;
+//				}
+//				break;
+//			}
+//			break;
+//		case SDL_QUIT:
+//			if (keyStates.find(GE)->first == eventG) {
+//				keyStates.find(GE)->second = true;
+//			}
+//			break;
+//		default:
+//			break;
+//		}
+//	}
+//	return true;
+//}
 
 InputDevice::InputDevice() {
 	event = std::make_unique<SDL_Event>();
@@ -116,20 +127,34 @@ void InputDevice::update() {
 }
 
 InputDevice::gameEvent InputDevice::Translate() {
+	iPosition iposit;
 	switch (event->key.keysym.sym) {
 	case SDLK_LEFT:
+		iposit.x -= 1;
 		return gameEvent::LEFT;
 		break;
 	case SDLK_RIGHT:
+		iposit.x += 1;
 		return gameEvent::RIGHT;
 		break;
 	case SDLK_UP:
+		iposit.y += 1;
 		return gameEvent::UP;
 		break;
 	case SDLK_DOWN:
+		iposit.y -= 1;
 		return gameEvent::DOWN;
 		break;
 	case SDLK_SPACE:
+		int checkbar=0;
+		if (checkbar == 0) {
+			iposit.y += 2;
+			checkbar++;
+		}
+		else {
+			iposit.y -= 2;
+			checkbar = 0;
+		}
 		return gameEvent::SPACE;
 		break;
 	case SDLK_RSHIFT:

@@ -6,11 +6,19 @@
 #include <memory>
 #include <string>
 #include "SDL.h"
+#include "View.h"
 
 using namespace std;
 
 class InputDevice {
 public:
+	struct iPosition {
+		float x = 0;
+		float y = 0;
+	};
+
+	View::Vector2d getInputPosition(iPosition::x xVal, iPosition::y yVal);
+	
 	enum class gameEvent {
 		NA,
 		UP,
@@ -37,3 +45,5 @@ private:
 	gameEvent Translate();
 	std::map<gameEvent, bool> keyStates;
 };
+
+#endif

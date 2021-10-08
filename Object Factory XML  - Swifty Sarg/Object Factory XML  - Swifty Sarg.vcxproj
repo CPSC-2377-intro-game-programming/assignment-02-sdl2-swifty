@@ -160,6 +160,7 @@ xcopy"$(ProjectDir)Assets" "$(ProjectDir)Game\Assets" /E /I /F /Y</Command>
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h" />
@@ -170,6 +171,7 @@ xcopy"$(ProjectDir)Assets" "$(ProjectDir)Game\Assets" /E /I /F /Y</Command>
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="View.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="level.xml" />
