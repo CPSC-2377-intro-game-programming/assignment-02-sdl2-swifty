@@ -16,11 +16,17 @@ public:
 	virtual unique_ptr<Object> update() = 0;
 	virtual void draw() = 0;
 private:
-	float x;
-	float y;
+	float xPosition;
+	float yPosition;
+
+	float xVelocity;
+	float yVelocity;
+
 	float angle;
 	float rotationAngle;
+
 	bool inPlay = false;
+
 	SDL_Renderer* renderer;
 	Texture* texture;
 };

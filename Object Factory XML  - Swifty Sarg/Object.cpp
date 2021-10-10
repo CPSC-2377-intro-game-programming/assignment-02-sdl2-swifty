@@ -1,8 +1,11 @@
 #include "Object.h"
 
 Object::Object() {
-	x = 0.0f;
-	y = 0.0f;
+	xPosition = 0.0f;
+	yPosition = 0.0f;
+
+	xVelocity = 0.0f;
+	yVelocity = 0.0f;
 
 	angle = 0.0f;
 	rotationAngle = 0.0f;
