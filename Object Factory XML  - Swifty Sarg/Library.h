@@ -10,7 +10,10 @@ class Library {
 public:
 	Library();
 	~Library();
+	getArtAsset(string keyName);
+	addArtAsset();
 private:
 	std::map<string, unique_ptr<ObjectFactory>> library;
+	std::map<string, std::shared_ptr<Texture>> artLibrary;
 };
 #endif

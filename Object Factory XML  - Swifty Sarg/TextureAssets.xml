@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Game>
+	<Screen width ="1024" height ="768"></Screen>
+	<FPS>100</FPS>
+	<Devices>
+		<Input create="true">
+			<InputEvent inputEvent ="" gameEvent=""></InputEvent>
+		</Input>
+	</Devices>
+	<Objects>
+		<Manticore name="Manticore">
+			<Position x="10.0f" y="-10.0f" angle="0.0f"/>
+			<Asset name="texture" path="Assets/Manticore.png"/>
+		</Manticore>
+		<ManticoreCard name="Manticore Card">
+			<Position x="10.0f" y="-10.0f" angle="0.0f"/>
+			<Asset name="texture" path="Assets/manticorecard.png"/>
+		</ManticoreCard>
+		<Minotaur name="Minotaur">
+			<Position x="0f" y="0f" angle="0.0"/>
+			<Asset name="texture" path="Assets/Minotaur.png" />
+		</Minotaur>
+		<MinotaurCard name="Manticore Card">
+			<Position x="0f" y="0f" angle="0.0"/>
+			<Asset name="texture" path="Assets/minotaurcard.png" />
+		</MinotaurCard>
+	</Objects>
+</Game>
